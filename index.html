@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position-aware Automatic Circuit Discovery – Project Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link href="fontawesome-6.6.0/css/all.css" rel="stylesheet">
+    <style>
+		.btn {
+		    padding: 7px 15px;
+			font-size: 20px;
+		}
+		
+		mark {
+			-webkit-animation: 3s highlight 1.5s 1 normal forwards;
+			animation: 3s highlight 1.5s 1 normal forwards;
+			background-color: none;
+			background: linear-gradient(90deg, #f7f5bc 50%, rgba(255, 255, 255, 0) 50%);
+			background-size: 200% 100%;
+			background-position: 100% 0;
+		}
+		
+		mark2 {
+			-webkit-animation: 3s highlight 1.5s 1 normal forwards;
+			animation: 3s highlight 1.5s 1 normal forwards;
+			background-color: none;
+			background: linear-gradient(90deg, #8fecff 50%, rgba(255, 255, 255, 0) 50%);
+			background-size: 200% 100%;
+			background-position: 100% 0;
+			font-weight: bold;
+		}
+		
+		@-webkit-keyframes highlight {
+		  to {
+			background-position: 0 0;
+		  }
+		}
+
+		@keyframes highlight {
+		  to {
+			background-position: 0 0;
+		  }
+		}
+		
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #87bcc9;
+            color: #284080;
+            padding: 60px 0;
+            text-align: center;
+        }
+		
+		figure {
+		  text-align: center; /* Centers the content inside the figure */
+		  margin: 20px auto; /* Adds vertical space and centers the figure horizontally */
+		}
+		
+		figcaption {
+		  padding-top: 10px;
+		  color: #000;
+		  font-style: italic; /* Styling for the caption */
+		  font-size: 20px;
+		}
+
+		header h1 {
+            margin: 0;
+            font-size: 50px;
+			padding-bottom: 20px;
+			font-weight: bold;
+        }
+
+        header h2 {
+            margin: 10px 0 0;
+            font-weight: 400;
+        }
+		
+		header address a {
+			font-size: 20px;
+			color: #4a5685;
+		}
+		
+		header address {
+			color: #337ab7
+		}
+		
+		header address institute {
+			color: #000000;
+			font-size: 20px;
+		}
+		
+		header address sup {
+			color: #000000;
+		}
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+		
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 28px;
+            border-left: 5px solid #4a9aac;
+            padding-left: 10px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+		
+		        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header address a {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            .figure-container figure {
+                flex: 1 1 100%;
+            }
+
+            .key-contributions, .methodology, .definitions {
+                padding: 15px;
+            }
+
+            section h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header address a {
+                font-size: 14px;
+            }
+
+            .key-contributions, .methodology, .definitions {
+                padding: 10px;
+            }
+
+            section p {
+                font-size: 14px;
+            }
+        }
+		
+		/* On larger screens (e.g., tablets, desktops) */
+		@media (min-width: 768px) {
+			img.float-figure {
+				float: right;
+				margin-left: 20px;
+				margin-right: 0;
+				width: 30%; /* Adjust based on your layout */
+			}
+		}
+
+		/* On smaller screens (e.g., phones), reset to inline */
+		@media (max-width: 767px) {
+			img.float-figure {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%; /* Full width inline */
+			}
+		}
+		
+		.figure-container {
+		  display: grid;
+		  grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+		  gap: 20px; /* Space between columns */
+		}
+		
+		.subtitle {
+		    font-size: 28px;
+            border-left: 5px solid #4a9aac;
+            padding-left: 10px;
+            color: #333;
+		}
+
+        .key-contributions, .methodology {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			font-size: 18px;
+        }
+		
+		.definitions {
+            background-color: #ededed;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			font-size: 18px;
+        }
+
+        .key-contributions h3, .methodology h3 .definitions h3 {
+            font-size: 24px;
+            color: #444;
+        }
+
+        .key-contributions ul, .methodology ul .definitions ul {
+            margin-left: 0px;
+			font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+		.card {
+			position: relative;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			background-color: #fff;
+			border: 1px solid rgba(0, 0, 0, .125);
+			border-radius: .25rem;
+		.card-header {
+			padding: .75rem 1.25rem;
+			margin-bottom: 0;
+			margin-top: 0;
+			background-color: #f7f7f9;
+			border-bottom: 1px solid rgba(0, 0, 0, .125);
+			}
+		.card-block {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			padding: 1.25rem;
+		}
+		.img-inline {
+		  vertical-align: middle;
+		  max-width: 100%;
+		  height: auto;
+		}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Position-aware Automatic Circuit Discovery</h1>
+	<address>
+	  <nobr><a href="https://talhaklay.github.io/" target="_blank">Tal Haklay</a><sup>1</sup>,</nobr>
+	  <nobr><a href="https://orgadhadas.github.io/" target="_blank">Hadas Orgad</a><sup>1</sup>,</nobr>
+	  <nobr><a href="https://baulab.info/" target="_blank">David Bau</a><sup>2</sup>,</nobr>
+	  <nobr><a href="https://aaronmueller.github.io/" target="_blank">Aaron Mueller</a><sup>1,2</sup>,</nobr>
+	  <nobr><a href="https://belinkov.com/" target="_blank">Yonatan Belinkov</a><sup>1</sup></nobr>
+	 <br>
+	  <nobr><sup>1</sup><institute>Technion - IIT</a></institute></nobr>;
+	  <nobr><sup>2</sup><institute>Northeastern University</a></institute></nobr>
+	</address>
+	<a href="https://arxiv.org/abs/2502.04577" target="_blank" class="btn" style="color: #fff; background-color: #198754; border-color: #136e44;"><i class="ai ai-arxiv"></i> ArXiv</a>
+    <a href="https://peap-circuits.github.io/paper.pdf" target="_blank" class="btn" style="color: #fff; background-color: #dc3545; border-color: #b72d3a;"><i class="far fa-file-pdf"></i> PDF</a>
+    <a href="https://github.com/technion-cs-nlp/PEAP" target="_blank" class="btn" style="color: #fff; background-color: #212529; border-color: #212529;"><i class="fab fa-github"></i> Code</a>
+</header>
+
+
+<div class="container">
+
+	<h2 class="subtitle">Abstract</h2>
+    <section>
+        <p>
+		A widely used strategy to discover and understand language model mechanisms is circuit analysis. A circuit is a minimal subgraph of a model’s computation graph that executes a specific task. <mark>We identify a gap in existing circuit discovery methods: they assume circuits are position-invariant, treating model components as equally relevant across input positions.</mark> This limits their ability to capture cross-positional interactions or mechanisms that vary across positions. To address this gap, <mark>we propose two improvements to incorporate positionality into circuits</mark>, even on tasks containing variable-length examples. First, <mark>we extend edge attribution patching, a gradient-based method for circuit discovery, to differentiate between token positions.</mark> Second, <mark>we introduce the concept of a dataset schema</mark>, which defines token spans with similar semantics across examples, <mark>enabling position-aware circuit discovery in datasets with variable length examples.</mark> We additionally develop <mark>an automated pipeline for schema generation and application</mark> using large language models. <mark2>Our approach enables fully automated discovery of position-sensitive circuits, yielding better trade-offs between circuit size and faithfulness compared to prior work</mark2>.
+        </p>
+    </section>
+	
+	<figure>
+	<img src="img/main_figure.png" class="img-inline" style="width:50%; min-width: 300px; height:auto; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+	<figcaption><span style="color: #7777F9">Positional</span> vs. <span style="color: #777">non-positional</span> circuits. In a <span style="color: #777">non-positional</span> circuit, the same edges must be included at all positions. A <span style="color: #7777F9">positional</span> circuit can distinguish between the same edge at different positions. This specificity yields better trade-offs between circuit size and faithfulness. It can also increase both precision and recall.</figcaption>
+	</figure>
+	
+
+	<h2 class="subtitle">Key Takeaways</h2>
+    <section class="key-contributions">
+        <ul>
+		<li><strong>Automatic discovery of position-aware circuits:</strong>We incorporate positional information into edge-attribution patching, enabling the automatic discovery of position-aware circuits.</li>
+		<li><strong>Improved Circuit Discovery Efficiency:</strong>Position-aware circuits achieve a better balance between edge count and performance compared to non-positional circuits.</li>
+		<li><strong>Automated Dataset Schemas:</strong>We introduce dataset schemas and develop an automated pipeline for schema generation, allowing circuit discovery on more diverse datasets.</li>
+        </ul>
+    </section>
+	
+	<h2 class="subtitle">Why positional circuits?</h2>
+    <section class="definitions">
+	<p>
+	Imagine a transformer that performs simple arithmetic addition of two 3-digit numbers. When adding two multi-digit numbers, one key step is computing the carry from one digit to the next higher digit. This process is inherently position-specific:
+	</p>
+	<ul>
+		<li>Consider adding the ones digit (position 0) of both numbers. The sum here might produce a carry that affects the tens digit (position 1). The mechanism that computes the carry is designed to take the output from position 0 and specifically feed it into the computation at position 1.</li>
+		<li>The circuit implementing the carry operation has an edge that goes from position 0 to position 1. There’s no corresponding edge from position 0 directly to position 2 because the carry doesn’t skip over positions. Each connection is tailored to the relative positions of the digits.</li>
+		<li>If we assumed the same mechanism runs uniformly at every position (i.e., a single, position-agnostic circuit), we would miss the nuance that the carry computation only occurs between adjacent digits.</li>
+	</ul>
+	<figure>
+	<img src="img/carry_fig.png" class="img-inline" style="width:70%; min-width: 300px; height:auto;">
+	<figcaption>The circuit for computing the carry is designed with specific positional dependencies in mind.</figcaption>
+	</figure>
+	<p>
+	Is summary, positions are an important aspect for describing a circuit in a model’s computational graph! A description of many mechanisms would not be complete if we ignore them.
+	</p>
+	<h2>
+	Two key failures when ignoring positions
+	</h2>
+	<u1>
+		<li><b>Cancellations across positions (low recall):</b> If a component has both positive and negative scores at different positions, summing them may cancel out its overall effect, potentially reducing its score to near zero (see figure, left).</li>
+		<li><b>Importance overestimation (low precision):</b> Methods that ignore position may prioritize edges with small impacts across many positions over those with significant impact in just a few (see figure, right). </li>
+	</u1>
+	
+	<figure>
+	<img src="img/failure_modes.png" class="img-inline" style="width:70%; min-width: 300px; height:auto;">
+	<figcaption>Left: The yellow edge at position 1 has the highest score of 100, indicating it is the most important edge. However, aggregating across positions causes scores of opposite signs to cancel. This causes the yellow edge to be incorrectly ranked as the least important. Right: The yellow edge at position 1 has the highest score; the scores of other edges are consistently high (but lower) at many positions. After summing across positions, the non-yellow edges have higher scores. Thus, the yellow edge is incorrectly ranked as the least important.</figcaption>
+	</figure>
+	
+	<p>
+	<b>We performed empirical experiments on GPT-2-small, finding evidence that these failure indeed occur when aggregating scores across positions in circuit discovery.</b> These experiments are described in the paper (section 2).
+	</p>
+	
+    </section>
+	
+	<h2 class="subtitle">Automatically Discovering Positional Circuits with Position-aware Edge Attribution Patching (PEAP)</h2>
+    <section class="methodology">
+	<p>
+	We introduce <b>Position-aware Edge Attribution Patching (PEAP)</b>, an extension of Edge Attribution Patching (EAP), which estimates the indirect effect of an edge on a target metric <b>M</b>. Standard EAP assumes that the nodes <b>u</b> and <b>v</b> of an edge <b>(u, v)</b> share the same position. However, to capture cross-position interactions in a circuit, attention edges spanning different positions must be considered.
+	</p>
+	<p>
+	In our paper, we define the necessary formulation to extend EAP to include these cross-position edges. This involves a specialized interventions for adjusting the contributions of <b>k</b>, <b>q</b>, and <b>v</b> across attention heads. The full formulation can be found in Section 3.
+	</p>
+	
+	<figure>
+	<img src="img/peap.png" class="img-inline" style="width:80%; min-width: 300px; height:auto;">
+	<figcaption>llustration of the attention mechanism from the perspective of position 3. We approximate how patching <span style="color: #9391ff">v1</span>, <span style="color: #6db1ff">k1</span> or <span style="color: #ff80df">q3</span> impacts the downstream metric via the output of the attention head at position 3.</figcaption>
+	</figure>
+				
+    </section>
+
+	<h2 class="subtitle">Schemas: Dealing With Less-Templatic Datasets, Automatically</h2>
+    <section class="key-contributions">
+	<p>
+Discovering circuits involves aggregating edge scores across examples. However, naive aggregation assumes perfect positional alignment in the computation graph, which is rarely the case in real-world datasets. To address this, we introduce a more flexible approach: instead of strict positional alignment, we assume examples share a similar high-level structure, represented by a dataset schema.
+	</p>
+	<p>
+A dataset schema identifies meaningful spans within input examples, based on semantic, syntactic, or other patterns. These spans replace individual tokens, treating each span as a single position. This shift enables the construction of more abstract, conceptual circuits rather than rigid structures tied to specific examples.
+				<figure>
+				<img src="img/schemas.png" class="img-inline" style="width:80%; min-width: 300px; height:auto;">
+				<figcaption>Example for schemas for each task.</figcaption>
+				</figure>
+		</p>
+	<p>
+	In the paper, we propose an automated method for generating schemas using LLMs (Section 4), guided by saliency maps of the analyzed model. These maps help identify which tokens are important and which can be grouped into spans.
+	</p>
+	</section>
+	
+	<h2 class="subtitle">Results</h2>
+	<section class="key-contributions">
+	<u1>
+	<li><b>Evaluating Faithfulness:</b> We assess faithfulness by comparing the circuit’s performance—when all elements outside the circuit are ablated—to that of the full model. The figure below illustrates how faithfulness changes as a function of the number of edges included in the circuit.</li>
+	<li><b>Positional Circuits Offer Better Trade-offs:</b> Positional circuits achieve a more efficient balance between circuit size and faithfulness. They maintain high faithfulness with significantly smaller circuit sizes compared to non-positional circuits.</li>
+	<li><b>Automated Circuit Discovery Matches Human Performance:</b> Our automated LLM-based schema pipeline identifies circuits with faithfulness comparable to those discovered by human experts, even in tasks with variable-length inputs.</li>
+	</u1>
+	<figure>
+	<img src="img/faithfulness_results.png" class="img-inline" style="width:100%; min-width: 300px; height:auto;">
+	</figure>
+	</section>
+
+	<h2 class="subtitle">How to cite</h2>
+
+	<div class="card">
+	<h3 class="card-header">bibliography</h3>
+	<div class="card-block">
+	<p style="text-indent: -3em; margin-left: 3em;" class="card-text clickselect">
+	Hadas Orgad, Michael Toker, Zorik Gekhman, Roi Reichart, Idan Szpektor, Hadas Kotek, Yonatan Belinkov, “<em>LLMs Know More Than They Show – On the Intrinsic Representation of LLM Hallucinations</em>”.
+	</p>
+	</div>
+	<h3 class="card-header">bibtex</h3>
+	<div class="card-block">
+	<pre class="card-text clickselect">
+@misc{haklay2025positionawareautomaticcircuitdiscovery,
+      title={Position-aware Automatic Circuit Discovery}, 
+      author={Tal Haklay and Hadas Orgad and David Bau and Aaron Mueller and Yonatan Belinkov},
+      year={2025},
+      eprint={2502.04577},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.04577}, 
+}
+	</pre>
+	</div>
+	</div>
+	<p></p>
+</div>
+
+
+<footer>
+    <p>Created by Hadas Orgad | Technion | 2024</p>
+</footer>
+
+</body>
+</html>
